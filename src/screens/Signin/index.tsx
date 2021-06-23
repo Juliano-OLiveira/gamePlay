@@ -1,29 +1,34 @@
 import React from 'react';
+
+
 import { useState } from 'react';
 import { View, 
     Text,
     TextInput,
     Image,
-    StatusBar } from 'react-native';
-import { styles} from '../styles';
+    } from 'react-native';
+import { styles} from './styles';
 
 import { ButtonIcon } from '../../components/Buttonicon';
 import IllustrationImg from '../../assets/illustration.png';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 
 
 export function Sigin(){
+    const navigation = useNavigation();
+
+    function handleSignIn() {
+        navigation.navigate('Home');
+    }
     const [texte, SetText] = useState('');
     console.log(texte);
     
     return(
         <View style={styles.container}>
-            <StatusBar barStyle = "light-content"
-            backgroundColor="transparent" 
-            translucent
-            />
-
+          
             <Image source={IllustrationImg}
             style={styles.image}
             resizeMode="stretch"
@@ -40,8 +45,9 @@ export function Sigin(){
                 favoritos com seus amigos
                 </Text>
             </View>
-            <ButtonIcon title="Entra com Discord"
-            activeOpacity={0.7}
+            <ButtonIcon title="Entrar com Discord"
+           
+            onPress={handleSignIn}
             />
         </View>
         

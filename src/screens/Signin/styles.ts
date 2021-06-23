@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
-import { theme } from '../global/theme';
+import { theme } from '../../global/styles/theme';
  
 
 
  export const  styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: theme.colors.background,
+      
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -23,13 +23,17 @@ import { theme } from '../global/theme';
         color:theme.colors.heading,
         fontSize:40,
         textAlign:'center',
-        marginBottom:16
+        marginBottom:16,
+        fontFamily:theme.fonts.title700,
+        lineHeight:40
     },
     subTitle:{
         color:theme.colors.heading,
         fontSize:15,
-        marginBottom:64,
-        textAlign:'center'
+        marginBottom:45,
+        textAlign:'center',
+        fontFamily:theme.fonts.title500,
+        lineHeight:25
     }
     
   });
