@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import DiscordImg from '../../assets/discord.png';
-import { styles } from './styles';
+import { styles  } from './styles';
 
 type Props = RectButtonProps  &{
     title:string,
@@ -17,15 +17,15 @@ type Props = RectButtonProps  &{
 
 export function ButtonIcon({title, ...rest} : Props){
     return(
-        <RectButton style={styles.container}
+        <RectButton style={[styles .container, {left:25,marginRight:45}]}
            {...rest}
         >
-            <View style={styles.iconWrapper}>
-                <Image source={DiscordImg} style={styles.icon}  />
+            <View style={styles .iconWrapper}>
+                <Image source={DiscordImg} style={styles .icon}  />
                 
             </View>
 
-            <Text style={styles.title}>
+            <Text style={styles .title}>
                 {title}
             </Text>
         </RectButton>
